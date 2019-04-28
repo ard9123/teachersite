@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Testing Coordinator Upload site</title>
+        <link rel="stylesheet" href="teachsitestyles.css">
+        <h1>SVHS Testing Room Number Site</h1>
+	    <h2>  Coordinator Document Upload Interface</h2>
+        <h3>by Andy Doyle </h3>
+    </head>
+    <body>
+        <div class="authent">
+        <p0 id = "enterPass"></p0><br>
+        </div>
+        <p1>
+            <form>
+                PIN:<input type = "number" Id = "PIN" min="0" max="99999" value= "" ><br>
+            </form>
+            <form>
+                <input type="button" Id = "submit" value="Authenticate" onclick = "startUp();">
+            </form>
+        </p1>
+        <div class="authent">
+        
+        <p3 id = "authent"> </p3><br>
+         </div>
+        <p7>Select which STAAR test that this file is for
+            <form>
+            <input type = "radio" Name = "Subject" Id = "English 1">      English 1<br>
+            <input type = "radio" Name = "Subject" Id = "US History">US History<br>
+            <input type = "radio" Name = "Subject" Id = "Biology">   Biology<br>
+            <input type = "radio" Name = "Subject" Id = "Algebra">   Algebra<br>
+            <input type = "radio" Name = "Subject" Id = "English 2">      English 2<br>
+            </form>
+            
+        </p7>
+        <div class="authent">
+            
+        </div>
+       
+        <p4>Upload CSV File<br>
+            ****Uploading a file will replace the previous file****<br>
+            
+            <input type = "file" value = "upload" id = "fileButton" accept =".csv"/><br>
+           
+        </p4>
+        <div class="authent">
+        <p5 id = "statusUp">
+        </p5></div><br>
+        <p6>"If it's not the Prussians, it's the Pagans"- Michael Saberian</p6>
+        
+        <script src="https://www.gstatic.com/firebasejs/5.9.2/firebase.js"></script>
+        <script>
+        // Initialize Firebase
+        var config = {
+        apiKey: "AIzaSyDepY_dci8vBFW_qUaY2p8Tzedi5VtAmdc",
+        authDomain: "testingroomsite.firebaseapp.com",
+        databaseURL: "https://testingroomsite.firebaseio.com",
+        projectId: "testingroomsite",
+        storageBucket: "testingroomsite.appspot.com",
+        messagingSenderId: "921009489350"
+        };
+        firebase.initializeApp(config);
+        </script>
+        <script src="teacher.js"></script> 
+    </body>
+
+</html>
