@@ -66,23 +66,26 @@ function startUp(){
                 stringSubject = "English 2";
             }
            else{
-               document.getElementById("statusUp").innerHTML=("ERROR: NO TEST TYPE SELECTED, TRY AGAIN");
+               document.getElementById("statusUp").innerHTML=("ERROR: NO TEST TYPE SELECTED, Refresh Page and try again");
            }
             //get file
             let file = e.target.files[0];
           
             let reader = new FileReader();
             reader.addEventListener("loadend",()=>{
+                console.log(reader.result);
                 let pairs = reader.result.split(/\r\n/);
+                console.log(pairs);
+                
                 let endGame = 0;
                 let whichLines = [];
                 for (let i = 0; i< pairs.length;i++){
                     
-                    if (/^[0-9]{6}\,[a-dA-d][0-9]{3}$/.test(pairs[i])== false){
-                       endGame++;
-                       whichLines.push(i+1);
-                        
-                        
+                    if (/^[0-9]{6}\,[a-dA-d][0-9]{3}$/.test(pairs[i])== false) {
+                       if(!(i==(pairs.length-1) && reader.result.charCodeAt(reader.result.length-1)==10)){
+                           endGame++;
+                            whichLines.push(i+1);
+                       }
                     }
                     
                 }
