@@ -59,11 +59,11 @@ function startUp(){
                
                 stringSubject = "Algebra";
             }
-            else if(document.getElementById("English 2").checked == true){
+            else if(document.getElementById("Algebra 2").checked == true){
                 //english 2
                 whichSubject = "eng2.csv";
                 
-                stringSubject = "English 2";
+                stringSubject = "Algebra 2";
             }
            else{
                document.getElementById("statusUp").innerHTML=("ERROR: NO TEST TYPE SELECTED, Refresh Page and try again");
