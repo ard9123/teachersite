@@ -82,10 +82,13 @@ function startUp(){
                 for (let i = 0; i< pairs.length;i++){
                     
                     if (/^[0-9]{6}\,[a-dA-d][0-9]{3}$/.test(pairs[i])== false) {
-                       if(!(i==(pairs.length-1) && reader.result.charCodeAt(reader.result.length-1)==10)){
-                           endGame++;
-                            whichLines.push(i+1);
-                       }
+                        
+                       if(!(pairs[i].includes("NOT"))){
+                            if(!(i==(pairs.length-1) && reader.result.charCodeAt(reader.result.length-1)==10)){
+                                endGame++;
+                                whichLines.push(i+1);
+                            } 
+                        }
                     }
                     
                 }
